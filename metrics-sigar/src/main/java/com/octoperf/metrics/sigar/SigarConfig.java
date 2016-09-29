@@ -13,7 +13,9 @@ class SigarConfig {
 
   @Bean
   Sigar sigar() throws Exception {
-    SigarProvisioner.provision();
+    if(!SigarProvisioner.isNativeLoaded()) {
+      SigarProvisioner.provision();
+    }
     return new Sigar();
   }
 }

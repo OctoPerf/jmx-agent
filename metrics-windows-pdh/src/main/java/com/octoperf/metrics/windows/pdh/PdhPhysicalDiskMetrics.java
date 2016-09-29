@@ -1,8 +1,5 @@
 package com.octoperf.metrics.windows.pdh;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableSet;
 import com.octoperf.metrics.service.api.Gauge;
 import com.octoperf.metrics.service.api.GaugeService;
@@ -13,11 +10,9 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Map;
 import java.util.Set;
 
 import static java.lang.String.format;
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
