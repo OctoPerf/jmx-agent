@@ -16,6 +16,14 @@ To run the JMX Metrics Agent:
 
 The metrics agent takes a few seconds to start. It create a "native" folder in the location where its being run. The "native" folder contains DLLs and SOs to query operating system metrics.
 
+## Ports and Firewalls
+
+**The agent exposes the JMX beans on port 1099**. This port can be changed by specifying the JMX RMI port on startup:
+
+> java -Djmx.rmi.port=9004 -jar metrics-agent-X.x.x.jar
+
+In the example above, the agent starts the JMX beans server on port 9004.
+
 ## Metrics Exposed
 
 The agent exposes the following JMX Domains:
