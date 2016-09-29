@@ -131,7 +131,7 @@ public interface WindowsNetworkInterfaceMetrics {
   double getTCPActiveRSCConnections();
 
   @ManagedMetric(
-    displayName = "TCP Active RSC Connections",
+    displayName = "TCP RSC Coalesced Packets/sec",
     unit = "packets/sec",
     description = "TCP RSC Coalesced Packets/sec")
   double getTCPRSCCoalescedPacketsPerSec();

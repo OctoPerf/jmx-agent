@@ -53,7 +53,7 @@ public interface WindowsMemoryMetrics {
     unit = "writes/sec",
     description = "Page Writes/sec is the rate at which pages are written to disk " +
     "to free up space in physical memory. Pages are written to disk only if they are changed " +
-    "while in physical memory, so they are likely to hold data, not code. ")
+    "while in physical memory, so they are likely to hold data, not code.")
   double getPageWritesPerSec();
 
   @ManagedMetric(
@@ -136,9 +136,9 @@ public interface WindowsMemoryMetrics {
     unit = "Bytes",
     description = "Pool Paged Bytes is the size, in bytes, of the paged pool, an " +
     "area of system memory (physical memory used by the operating system) for objects that can be written " +
-    "to disk when they are not being used. Paged Pool is a larger resource than Nonpaged pool – " +
+    "to disk when they are not being used. Paged Pool is a larger resource than Nonpaged pool - " +
     "however, if this value is consistently greater than 70% of the maximum configured pool size, " +
-    "you may be at risk of a Paged Pool depletion (Event ID 2020). ")
+    "you may be at risk of a Paged Pool depletion (Event ID 2020).")
   double getPoolPagedBytes();
 
   @ManagedMetric(

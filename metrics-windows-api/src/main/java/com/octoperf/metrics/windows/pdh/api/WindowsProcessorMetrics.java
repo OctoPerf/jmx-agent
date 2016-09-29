@@ -44,7 +44,7 @@ public interface WindowsProcessorMetrics {
   @ManagedMetric(
     displayName = "% Interrupt Time",
     unit = "%",
-    description = " This measures the time the processor spends receiving and " +
+    description = "This measures the time the processor spends receiving and " +
     "servicing hardware interruptions during specific sample intervals.")
   double getPercentCpuInterruptTime();
 
@@ -98,7 +98,7 @@ public interface WindowsProcessorMetrics {
   double getC2TransitionsPerSec();
 
   @ManagedMetric(
-    displayName = "C2 transitions/sec",
+    displayName = "C3 transitions/sec",
     unit = "transitions/sec",
     description = "Number of Processor to C3 state transitions per second.")
   double getC3TransitionsPerSec();
