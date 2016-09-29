@@ -14,6 +14,15 @@ To run the JMX Metrics Agent:
 - Place it in a folder writeable by your user (Example: Documents on Windows),
 - Run via command line: *java - jar metrics-agent-X.x.x.jar*, Replace X.x.x by the version.
 
+The metrics agent takes a few seconds to start. It create a "native" folder in the location where its being run. The "native" folder contains DLLs and SOs to query operating system metrics.
+
+## Metrics Exposed
+
+The agent exposes the following JMX Domains:
+
+- **Sigar** on Linux systems,
+* **Windows** and **SQLServer** on Windows.
+
 ## Build from sources
 
 Run the following command at the root of the project:
@@ -21,3 +30,7 @@ Run the following command at the root of the project:
 > mvn clean package
 
 The executable JAR file is built in metrics-agent/target folder.
+
+## Contributing
+
+Pull requests are welcome if you would like to add additional metrics.
