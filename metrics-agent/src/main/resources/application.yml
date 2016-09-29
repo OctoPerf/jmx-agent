@@ -1,0 +1,4 @@
+server.port: 0
+jmx.rmi.port: 1099
+spring.jmx.enabled: true
+endpoints.enabled: false
