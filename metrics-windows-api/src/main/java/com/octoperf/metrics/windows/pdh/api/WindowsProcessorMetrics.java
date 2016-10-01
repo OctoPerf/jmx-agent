@@ -13,13 +13,13 @@ public interface WindowsProcessorMetrics {
   @ManagedMetric(
     displayName = "% Processor Time",
     unit = "%",
-    description="% Processor Time")
+    description="Percent of Processor Usage.")
   double getPercentProcessorTime();
 
   @ManagedMetric(
     displayName = "% Idle Time",
     unit = "%",
-    description="The percentage of time a process was running in idle mode.")
+    description="The percentage of time the processor was running in idle mode.")
   double getPercentCpuIdleTime();
 
   @ManagedMetric(
@@ -32,13 +32,13 @@ public interface WindowsProcessorMetrics {
   @ManagedMetric(
     displayName = "% Privileged Time",
     unit = "%",
-    description="The percentage of time a process was running in privileged mode.")
+    description="The percentage of time the processor was running in privileged mode.")
   double getPercentCpuPrivilegedTime();
 
   @ManagedMetric(
     displayName = "% User Time",
     unit = "%",
-    description="The percentage of time a process was running in user mode.")
+    description="The percentage of time the processor was running in user mode.")
   double getPercentCpuUserTime();
 
   @ManagedMetric(
