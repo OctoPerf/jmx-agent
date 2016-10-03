@@ -67,7 +67,7 @@ public interface SqlServerBufferManagerMetrics {
     unit = "reads/sec",
     description = "Number of physical database page reads issued " +
       "per second. Normal OLTP workloads support " +
-      "80 – 90 per second, but higher values may be " +
+      "80 - 90 per second, but higher values may be " +
       "a yellow flag for poor indexing or insufficient " +
       "memory.")
   double getPageReadsPerSec();
@@ -77,7 +77,7 @@ public interface SqlServerBufferManagerMetrics {
     unit = "writes/sec",
     description = "Number of database pages physically written " +
       "to disk per second. Normal OLTP workloads " +
-      "support 80 – 90 per second. Values over 90 " +
+      "support 80 - 90 per second. Values over 90 " +
       "should be crossed checked with 'lazy writer/sec' " +
       "and “checkpoint” counters. If the other counters " +
       "are also high, then it may indicate insufficient " +
