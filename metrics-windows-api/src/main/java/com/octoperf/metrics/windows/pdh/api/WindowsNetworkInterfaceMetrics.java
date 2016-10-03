@@ -85,7 +85,7 @@ public interface WindowsNetworkInterfaceMetrics {
     displayName = "Bytes Sent/sec",
     unit = "bytes/sec",
     description = "Shows the rate at which bytes are sent over each network adapter. The counted " +
-    "bytes include framing characters. Bytes Sent/sec is a subset of Network Interface\Bytes Total/sec.")
+    "bytes include framing characters. Bytes Sent/sec is a subset of Network Interface Bytes Total/sec.")
   double getBytesSentPerSec();
 
   @ManagedMetric(

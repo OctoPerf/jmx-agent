@@ -78,6 +78,11 @@ public final class PdhSystemMetrics implements WindowsSystemMetrics {
   }
 
   @Override
+  public double getFileWriteBytesPerSec() {
+    return perSecond("File Write Bytes/sec");
+  }
+
+  @Override
   public double getFileControlBytesPerSec() {
     return perSecond("File Control Bytes/sec");
   }
