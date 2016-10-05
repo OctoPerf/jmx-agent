@@ -1,6 +1,13 @@
 # JMX Metrics Agent
 
-The JMX Metrics Agent uses [Hyperic Sigar](https://github.com/hyperic/sigar) and PDH to exposes Operating System key performance metrics using JMX. Sigar is uses for Linux and PDH for Windows.
+The JMX Metrics Agent uses [Hyperic Sigar](https://github.com/hyperic/sigar) and PDH to exposes Operating System key performance metrics using JMX. Sigar is uses for Linux and PDH for Windows. The following metrics are available: (non-exhaustive)
+
+- CPU usage,
+- Network Interfaces usage,
+- Hard disk drives usage,
+- Per Process metrics (CPU, Mem...),
+- TCP metrics,
+- and Memory (RAM, Swap) usage.
 
 ## Requirements
 
