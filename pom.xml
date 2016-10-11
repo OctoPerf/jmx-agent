@@ -20,6 +20,8 @@
     <module>metrics-sqlserver-api</module>
     <module>metrics-sqlserver-pdh</module>
     <module>metrics-condition</module>
+    <module>metrics-iis-api</module>
+    <module>metrics-iis-pdh</module>
   </modules>
 
   <properties>
