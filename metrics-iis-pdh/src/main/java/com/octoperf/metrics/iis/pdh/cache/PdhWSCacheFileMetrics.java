@@ -1,8 +1,9 @@
-package com.octoperf.metrics.iis.pdh;
+package com.octoperf.metrics.iis.pdh.cache;
 
 import com.google.common.collect.ImmutableSet;
 import com.octoperf.metrics.condition.IsWindows;
 import com.octoperf.metrics.iis.api.cache.WebServiceCacheFileMetrics;
+import com.octoperf.metrics.iis.pdh.IsIIS;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,8 +19,8 @@ import static lombok.AccessLevel.PACKAGE;
 @Component
 @AllArgsConstructor(access = PACKAGE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@Conditional({IsWindows.class, IsWindows.class})
-public final class PdhWebServiceCacheFileMetrics implements WebServiceCacheFileMetrics {
+@Conditional({IsWindows.class, IsIIS.class})
+public final class PdhWSCacheFileMetrics implements WebServiceCacheFileMetrics {
   private static final String WS_CACHE = "Web Service Cache";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
     "URI Cache Hits %"

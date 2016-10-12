@@ -1,8 +1,9 @@
-package com.octoperf.metrics.iis.pdh;
+package com.octoperf.metrics.iis.pdh.cache;
 
 import com.google.common.collect.ImmutableSet;
 import com.octoperf.metrics.condition.IsWindows;
-import com.octoperf.metrics.iis.api.cache.WebServiceCacheMetadataMetrics;
+import com.octoperf.metrics.iis.api.cache.WebServiceCacheURIMetrics;
+import com.octoperf.metrics.iis.pdh.IsIIS;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,49 +20,49 @@ import static lombok.AccessLevel.PACKAGE;
 @Component
 @AllArgsConstructor(access = PACKAGE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@Conditional({IsWindows.class, IsWindows.class})
-public final class PdhWebServiceCacheMetadataMetrics implements WebServiceCacheMetadataMetrics {
+@Conditional({IsWindows.class, IsIIS.class})
+public final class PdhWSCacheURIMetrics implements WebServiceCacheURIMetrics {
   private static final String WS_CACHE = "Web Service Cache";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "Metadata Cache Hits %"
+    "URI Cache Hits %"
   );
 
   @NonNull
   PerfmonQueryService perfmon;
 
   @Override
-  public double getCurrentMetadataCached() {
-    return ws("Current Metadata Cached");
+  public double getCurrentURIsCached() {
+    return ws("Current URIs Cached");
   }
 
   @Override
-  public double getTotalFlushedMetadata() {
-    return ws("Total Flushed Metadata");
+  public double getTotalFlushedURIs() {
+    return ws("Total Flushed URIs");
   }
 
   @Override
-  public double getTotalMetadataCached() {
-    return ws("Total Metadata Cached");
+  public double getTotalURIsCached() {
+    return ws("Total URIs Cached");
   }
 
   @Override
-  public double getMetadataCacheHits() {
-    return ws("Metadata Cache Hits");
+  public double getURICacheHits() {
+    return ws("URI Cache Hits");
   }
 
   @Override
-  public double getMetadataCacheMisses() {
-    return ws("Metadata Cache Misses");
+  public double getURICacheMisses() {
+    return ws("URI Cache Misses");
   }
 
   @Override
-  public double getMetadataCacheFlushes() {
-    return ws("Metadata Cache Flushes");
+  public double getURICacheFlushes() {
+    return ws("URI Cache Flushes");
   }
 
   @Override
-  public double getPercentMetadataCacheHits() {
-    return formatted("Metadata Cache Hits %");
+  public double getPercentURICacheHits() {
+    return formatted("URI Cache Hits %");
   }
 
   private double ws(final String counter) {

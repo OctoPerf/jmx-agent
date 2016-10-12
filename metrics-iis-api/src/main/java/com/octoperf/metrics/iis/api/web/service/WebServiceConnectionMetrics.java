@@ -39,7 +39,7 @@ public interface WebServiceConnectionMetrics {
     displayName = "Total Logon Attempts",
     description = "The number of attempts to log on to the WWW service that have occurred since the service started.",
     unit = "connections")
-  double getTotalLongAttempts();
+  double getTotalLogonAttempts();
 
   @ManagedMetric(
     displayName = "Logon Attempts/sec",

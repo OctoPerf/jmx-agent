@@ -19,7 +19,7 @@ public interface WebServiceFTPUserMetrics {
     displayName = "Maximum Anonymous Users",
     description = "The maximum number of users who have established concurrent anonymous connections using the FTP service since the service started.",
     unit = "users")
-  double get();
+  double getMaximumAnonymousUsers();
 
   @ManagedMetric(
     displayName = "Total NonAnonymous Users",

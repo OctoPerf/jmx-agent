@@ -20,7 +20,7 @@ import static lombok.AccessLevel.PACKAGE;
 @Component
 @AllArgsConstructor(access = PACKAGE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@Conditional({IsWindows.class, IsWindows.class})
+@Conditional({IsWindows.class, IsIIS.class})
 public final class PdhKernelURIMetrics implements KernelURIMetrics {
   private static final String KERNEL = "Kernel";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(

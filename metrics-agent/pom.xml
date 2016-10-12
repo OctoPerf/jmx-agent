@@ -45,6 +45,11 @@
     </dependency>
     <dependency>
       <groupId>com.octoperf</groupId>
+      <artifactId>metrics-iis-pdh</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.octoperf</groupId>
       <artifactId>metrics-service-spring</artifactId>
       <version>${project.version}</version>
     </dependency>

@@ -163,7 +163,7 @@ public interface WebServiceRequestMetrics {
     description = "The rate, in seconds, at which HTTP requests that use the PROPFIND method have been made to the WWW service.",
     unit = "requests/sec"
   )
-  double getPopfindRequestsPerSec();
+  double getPropfindRequestsPerSec();
 
   @ManagedMetric(
     displayName = "Total Proppatch Requests",
