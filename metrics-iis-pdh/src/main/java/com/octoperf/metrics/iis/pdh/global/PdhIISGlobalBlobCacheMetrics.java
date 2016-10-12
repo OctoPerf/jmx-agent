@@ -41,7 +41,7 @@ public final class PdhIISGlobalBlobCacheMetrics implements IISGlobalBlobCacheMet
 
   @Override
   public double getBLOBCacheHitsPercent() {
-    return formatted("BLOB Cache Hits %");
+    return formatted("BLOB Cache Hit %");
   }
 
   @Override

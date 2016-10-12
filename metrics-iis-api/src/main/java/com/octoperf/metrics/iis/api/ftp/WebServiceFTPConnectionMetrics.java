@@ -5,7 +5,7 @@ import org.springframework.jmx.export.annotation.ManagedMetric;
 import org.springframework.jmx.export.annotation.ManagedResource;
 
 @ManagedResource(
-  objectName = "IIS:type=FTP,category=IO",
+  objectName = "IIS:type=FTP,category=Connection",
   description = "Bytes and Total Files counters for the FTP Service performance object.")
 public interface WebServiceFTPConnectionMetrics {
 
