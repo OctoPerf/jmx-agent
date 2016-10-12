@@ -24,7 +24,7 @@ import static lombok.AccessLevel.PACKAGE;
 public final class PdhKernelURIMetrics implements KernelURIMetrics {
   private static final String KERNEL = "Kernel";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "URI Cache Hits %"
+      "URI Cache Hits %"
   );
 
   @NonNull
@@ -83,7 +83,7 @@ public final class PdhKernelURIMetrics implements KernelURIMetrics {
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(KERNEL, FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(KERNEL, FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

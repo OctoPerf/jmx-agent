@@ -25,9 +25,9 @@ import static lombok.AccessLevel.PACKAGE;
 public final class PdhAspMiscMetrics implements ASPMiscMetrics {
   private static final String ASP = "Active Server Pages";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "In Memory Template Cache Hit Rate",
-    "Script Engine Cache Hit Rate",
-    "Template Cache Hit Rate"
+      "In Memory Template Cache Hit Rate",
+      "Script Engine Cache Hit Rate",
+      "Template Cache Hit Rate"
   );
 
   @NonNull
@@ -131,7 +131,7 @@ public final class PdhAspMiscMetrics implements ASPMiscMetrics {
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(ASP, FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(ASP, FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

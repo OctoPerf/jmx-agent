@@ -67,7 +67,7 @@ final class PdhQueryService extends CacheLoader<PdhQueryService.PdhQuery, Map<St
     }
 
     final Map<String, Double> computed = Try
-        .of(() -> pdh.getFormattedValues(ImmutableList.copyOf(counterToKey.keySet())))
+        .of(() -> pdh.getFormattedValues(copyOf(counterToKey.keySet())))
         .getOrElse(ImmutableMap::of);
 
     final Map<String, Double> result = new HashMap<>();

@@ -166,6 +166,8 @@ public final class PdhMemoryMetrics implements WindowsMemoryMetrics {
   }
 
   private double formatted(final String counter) {
-    return perfmon.getFormattedValues("Memory", FORMATTED_COUNTERS).get(counter);
+    return perfmon
+        .getFormattedValues("Memory", FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

@@ -5,7 +5,7 @@ import org.springframework.jmx.export.annotation.ManagedMetric;
 import org.springframework.jmx.export.annotation.ManagedResource;
 
 @ManagedResource(
-  objectName = "IIS:type=ASP,category=Debugging",
+  objectName = "IIS:type=ASP,category=Request",
   description = "ASP Debugging and Errors counters for the Active Server Pages performance object.")
 public interface ASPRequestMetrics {
 

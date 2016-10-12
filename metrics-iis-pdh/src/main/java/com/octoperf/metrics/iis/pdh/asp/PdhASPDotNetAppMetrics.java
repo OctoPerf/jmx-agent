@@ -20,19 +20,17 @@ import java.util.Set;
 import static java.lang.String.format;
 import static lombok.AccessLevel.PACKAGE;
 
-@Component
 @AllArgsConstructor(access = PACKAGE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@Conditional({IsWindows.class, IsIIS.class})
 public final class PdhASPDotNetAppMetrics implements ASPDotNetAppMetrics {
   private static final String ASP_DOT_NET_APP = "ASP.NET Applications(%s)";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "Cache API Hit Ratio",
-    "Cache API Turnover Rate",
-    "Cache Total Hit Ratio",
-    "Cache Total Turnover Rate",
-    "Output Cache Hit Ratio",
-    "Output Cache Turnover Rate"
+      "Cache API Hit Ratio",
+      "Cache API Turnover Rate",
+      "Cache Total Hit Ratio",
+      "Cache Total Turnover Rate",
+      "Output Cache Hit Ratio",
+      "Output Cache Turnover Rate"
   );
 
   @NonNull
@@ -299,7 +297,7 @@ public final class PdhASPDotNetAppMetrics implements ASPDotNetAppMetrics {
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(format(ASP_DOT_NET_APP, instance), FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(format(ASP_DOT_NET_APP, instance), FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

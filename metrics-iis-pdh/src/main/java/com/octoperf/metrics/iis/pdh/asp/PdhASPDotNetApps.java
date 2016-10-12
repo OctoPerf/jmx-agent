@@ -22,7 +22,7 @@ import static javax.management.ObjectName.quote;
 @Conditional({IsWindows.class, IsIIS.class})
 final class PdhASPDotNetApps {
   private static final String ASP_DOT_NET_APPS = "ASP.NET Applications";
-  private static final String OBJECT_NAME = "IIS:type=%s,instance=%s";
+  private static final String OBJECT_NAME = "IIS:type=ASPdotNET,instance=%s";
 
   PdhASPDotNetApps(
     final PerfmonQueryService perfmon,
@@ -36,6 +36,6 @@ final class PdhASPDotNetApps {
   }
 
   private ObjectName getObjectName(final String instance) throws MalformedObjectNameException {
-    return new ObjectName(String.format(OBJECT_NAME, ASP_DOT_NET_APPS, quote(instance)));
+    return new ObjectName(String.format(OBJECT_NAME, quote(instance)));
   }
 }

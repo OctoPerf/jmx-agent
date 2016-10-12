@@ -9,7 +9,7 @@ import org.springframework.jmx.export.annotation.ManagedResource;
 public interface ASPDotNetAppMetrics {
 
   @ManagedAttribute(
-    description = "ASP.NET Application name."
+    description = "ASPNET Application name."
   )
   String getInstance();
 

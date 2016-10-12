@@ -161,7 +161,9 @@ public final class PdhPhysicalDiskMetrics implements WindowsPhysicalDiskMetrics 
   }
 
   private double formatted(final String counter) {
-    return perfmon.getFormattedValues(diskInstance(), COUNTERS).get(counter);
+    return perfmon
+        .getFormattedValues(diskInstance(), COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 
   private String diskInstance() {

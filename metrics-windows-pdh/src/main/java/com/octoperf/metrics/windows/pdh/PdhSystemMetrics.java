@@ -144,6 +144,6 @@ public final class PdhSystemMetrics implements WindowsSystemMetrics {
   private double formatted(final String counter) {
     return perfmon
         .getFormattedValues(SYSTEM, FORMATTED)
-        .get(counter);
+        .getOrDefault(counter, 0d);
   }
 }

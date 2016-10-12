@@ -22,7 +22,7 @@ import static javax.management.ObjectName.quote;
 @Conditional({IsWindows.class, IsIIS.class})
 final class PdhIISWebServices {
   private static final String WEB_SERVICE = "Web Service";
-  private static final String OBJECT_NAME = "IIS:type=%s,instance=%s,category=%s";
+  private static final String OBJECT_NAME = "IIS:type=WebService,instance=%s,category=%s";
 
   PdhIISWebServices(
     final PerfmonQueryService perfmon,
@@ -42,6 +42,6 @@ final class PdhIISWebServices {
   }
 
   private ObjectName getObjectName(final String name, final String instance) throws MalformedObjectNameException {
-    return new ObjectName(String.format(OBJECT_NAME, WEB_SERVICE, quote(instance), name));
+    return new ObjectName(String.format(OBJECT_NAME, quote(instance), name));
   }
 }

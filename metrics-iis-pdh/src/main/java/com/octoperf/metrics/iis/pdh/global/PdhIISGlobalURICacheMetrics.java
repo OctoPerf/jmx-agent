@@ -23,7 +23,7 @@ import static lombok.AccessLevel.PACKAGE;
 public final class PdhIISGlobalURICacheMetrics implements IISGlobalURICacheMetrics {
   private static final String IIS_GLOBAL = "Internet Information Services Global";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "URI Cache Hits %"
+      "URI Cache Hits %"
   );
 
   @NonNull
@@ -80,7 +80,7 @@ public final class PdhIISGlobalURICacheMetrics implements IISGlobalURICacheMetri
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(IIS_GLOBAL, FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(IIS_GLOBAL, FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

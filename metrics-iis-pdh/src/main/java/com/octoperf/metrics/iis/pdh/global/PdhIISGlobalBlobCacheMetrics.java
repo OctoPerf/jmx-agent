@@ -23,7 +23,7 @@ import static lombok.AccessLevel.PACKAGE;
 public final class PdhIISGlobalBlobCacheMetrics implements IISGlobalBlobCacheMetrics {
   private static final String IIS_GLOBAL = "Internet Information Services Global";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "BLOB Cache Hits %"
+      "BLOB Cache Hits %"
   );
 
   @NonNull
@@ -70,7 +70,7 @@ public final class PdhIISGlobalBlobCacheMetrics implements IISGlobalBlobCacheMet
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(IIS_GLOBAL, FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(IIS_GLOBAL, FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

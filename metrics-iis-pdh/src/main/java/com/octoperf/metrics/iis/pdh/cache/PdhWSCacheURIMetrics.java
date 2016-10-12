@@ -24,7 +24,7 @@ import static lombok.AccessLevel.PACKAGE;
 public final class PdhWSCacheURIMetrics implements WebServiceCacheURIMetrics {
   private static final String WS_CACHE = "Web Service Cache";
   private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
-    "URI Cache Hits %"
+      "URI Cache Hits %"
   );
 
   @NonNull
@@ -71,7 +71,7 @@ public final class PdhWSCacheURIMetrics implements WebServiceCacheURIMetrics {
 
   private double formatted(final String counter) {
     return perfmon
-      .getFormattedValues(format(WS_CACHE, counter), FORMATTED_COUNTERS)
-      .get(counter);
+        .getFormattedValues(format(WS_CACHE, counter), FORMATTED_COUNTERS)
+        .getOrDefault(counter, 0d);
   }
 }

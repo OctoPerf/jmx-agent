@@ -129,6 +129,6 @@ public final class PdhProcessorMetrics implements WindowsProcessorMetrics {
   private double formatted(final String counter) {
     return perfmon
         .getFormattedValues(format(PROCESSOR, instance), FORMATTED_COUNTERS)
-        .get(counter);
+        .getOrDefault(counter, 0d);
   }
 }
