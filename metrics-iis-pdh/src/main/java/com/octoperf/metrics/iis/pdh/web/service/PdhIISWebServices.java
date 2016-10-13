@@ -38,6 +38,7 @@ final class PdhIISWebServices {
       exporter.registerManagedResource(new PdhWSFileMetrics(perfmon, gauges, instance), getObjectName("File", instance));
       exporter.registerManagedResource(new PdhWSRequestMetrics(perfmon, gauges, instance), getObjectName("Request", instance));
       exporter.registerManagedResource(new PdhWSUserMetrics(perfmon, gauges, instance), getObjectName("User", instance));
+      exporter.registerManagedResource(new PdhWSMiscMetrics(perfmon, instance), getObjectName("Misc", instance));
     }
   }
 
