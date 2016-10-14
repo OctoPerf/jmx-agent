@@ -1,9 +1,7 @@
 package com.octoperf.metrics.iis.pdh.asp;
 
 import com.google.common.collect.ImmutableSet;
-import com.octoperf.metrics.condition.IsWindows;
 import com.octoperf.metrics.iis.api.asp.ASPDotNetAppMetrics;
-import com.octoperf.metrics.iis.pdh.IsIIS;
 import com.octoperf.metrics.service.api.Gauge;
 import com.octoperf.metrics.service.api.GaugeService;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
@@ -12,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
