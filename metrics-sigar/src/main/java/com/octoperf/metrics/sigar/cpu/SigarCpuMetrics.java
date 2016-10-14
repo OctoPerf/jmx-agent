@@ -1,8 +1,8 @@
 package com.octoperf.metrics.sigar.cpu;
 
 import com.octoperf.metrics.api.CpuMetrics;
-import com.octoperf.metrics.service.api.UnitConversionService;
 import com.octoperf.metrics.condition.IsNotWindows;
+import com.octoperf.metrics.service.api.UnitConversionService;
 import javaslang.collection.List;
 import javaslang.control.Try;
 import lombok.AccessLevel;

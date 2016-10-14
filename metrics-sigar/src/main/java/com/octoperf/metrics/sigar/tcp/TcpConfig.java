@@ -1,7 +1,7 @@
 package com.octoperf.metrics.sigar.tcp;
 
-import com.octoperf.metrics.service.api.CachingService;
 import com.octoperf.metrics.condition.IsNotWindows;
+import com.octoperf.metrics.service.api.CachingService;
 import javaslang.control.Try;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.Tcp;

@@ -1,12 +1,9 @@
 package com.octoperf.metrics.windows.pdh;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
-import com.octoperf.metrics.windows.pdh.api.WindowsNetworkInterfaceMetrics;
-import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import com.octoperf.metrics.service.api.Gauge;
 import com.octoperf.metrics.service.api.GaugeService;
+import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
+import com.octoperf.metrics.windows.pdh.api.WindowsNetworkInterfaceMetrics;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,8 +11,6 @@ import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
 import org.hyperic.sigar.win32.Pdh;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-
-import java.util.concurrent.TimeUnit;
 
 import static lombok.AccessLevel.PACKAGE;
 

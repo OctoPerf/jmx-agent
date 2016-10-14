@@ -1,7 +1,7 @@
 package com.octoperf.metrics.sigar.cpu;
 
-import com.octoperf.metrics.service.api.CachingService;
 import com.octoperf.metrics.condition.IsNotWindows;
+import com.octoperf.metrics.service.api.CachingService;
 import javaslang.control.Try;
 import org.hyperic.sigar.Cpu;
 import org.hyperic.sigar.CpuInfo;

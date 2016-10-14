@@ -1,8 +1,8 @@
 package com.octoperf.metrics.sigar.memory;
 
 import com.octoperf.metrics.api.MemoryMetrics;
-import com.octoperf.metrics.service.api.UnitConversionService;
 import com.octoperf.metrics.condition.IsNotWindows;
+import com.octoperf.metrics.service.api.UnitConversionService;
 import javaslang.control.Try;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

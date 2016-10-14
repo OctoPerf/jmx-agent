@@ -1,8 +1,8 @@
 package com.octoperf.metrics.sigar.process;
 
+import com.octoperf.metrics.condition.IsNotWindows;
 import com.octoperf.metrics.service.api.CachingService;
 import com.octoperf.metrics.service.api.UnitConversionService;
-import com.octoperf.metrics.condition.IsNotWindows;
 import org.hyperic.sigar.ProcState;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;

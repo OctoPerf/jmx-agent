@@ -1,8 +1,8 @@
 package com.octoperf.metrics.sigar.tcp;
 
 import com.octoperf.metrics.api.TcpMetrics;
-import com.octoperf.metrics.service.api.UnitConversionService;
 import com.octoperf.metrics.condition.IsNotWindows;
+import com.octoperf.metrics.service.api.UnitConversionService;
 import javaslang.control.Try;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;

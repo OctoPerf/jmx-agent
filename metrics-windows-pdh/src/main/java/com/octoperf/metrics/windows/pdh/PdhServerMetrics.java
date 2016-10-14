@@ -1,9 +1,9 @@
 package com.octoperf.metrics.windows.pdh;
 
-import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
-import com.octoperf.metrics.windows.pdh.api.WindowsServerMetrics;
 import com.octoperf.metrics.service.api.Gauge;
 import com.octoperf.metrics.service.api.GaugeService;
+import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
+import com.octoperf.metrics.windows.pdh.api.WindowsServerMetrics;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;

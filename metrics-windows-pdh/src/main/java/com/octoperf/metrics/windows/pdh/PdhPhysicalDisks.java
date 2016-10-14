@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 import javax.management.JMException;
 import javax.management.ObjectName;
-
 import java.util.List;
 
 import static java.lang.String.format;

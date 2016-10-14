@@ -1,8 +1,8 @@
 package com.octoperf.metrics.sigar.disk;
 
+import com.octoperf.metrics.condition.IsNotWindows;
 import com.octoperf.metrics.service.api.CachingService;
 import com.octoperf.metrics.service.api.UnitConversionService;
-import com.octoperf.metrics.condition.IsNotWindows;
 import javaslang.control.Try;
 import org.hyperic.sigar.FileSystem;
 import org.hyperic.sigar.FileSystemUsage;

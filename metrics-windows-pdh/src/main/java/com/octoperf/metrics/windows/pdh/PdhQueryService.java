@@ -3,7 +3,6 @@ package com.octoperf.metrics.windows.pdh;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import javaslang.control.Try;
@@ -16,7 +15,11 @@ import org.hyperic.sigar.win32.Pdh;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static com.google.common.collect.ImmutableList.copyOf;

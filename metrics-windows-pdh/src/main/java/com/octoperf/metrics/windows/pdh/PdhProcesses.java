@@ -1,8 +1,8 @@
 package com.octoperf.metrics.windows.pdh;
 
-import com.octoperf.metrics.windows.pdh.api.WindowsProcessMetrics;
-import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import com.octoperf.metrics.service.api.GaugeService;
+import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
+import com.octoperf.metrics.windows.pdh.api.WindowsProcessMetrics;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.hyperic.sigar.win32.Pdh;
