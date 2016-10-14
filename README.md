@@ -9,6 +9,11 @@ The JMX Metrics Agent uses [Hyperic Sigar](https://github.com/hyperic/sigar) and
 - TCP metrics,
 - and Memory (RAM, Swap) usage.
 
+Windows users can also monitor the following servers metrics:
+
+- Microsoft SQL Server,
+* Microsoft IIS.
+
 ## Requirements
 
 The JMX Agent is a java application which requires a Java Runtime Environment.
