@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 public final class IsSqlServer implements Condition {
-  static final String SQL_SERVER = "MSSQL$SQL2K14_MBS51P";
+  static final String SQL_SERVER = "SQLServer";
 
   @Override
   public boolean matches(final ConditionContext context, final AnnotatedTypeMetadata metadata) {
