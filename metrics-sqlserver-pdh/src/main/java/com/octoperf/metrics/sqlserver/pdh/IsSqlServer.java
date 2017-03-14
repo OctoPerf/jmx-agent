@@ -7,12 +7,12 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 public final class IsSqlServer implements Condition {
-  static final String SQL_SERVER = "SQLServer";
+  static final String SQL_SERVER = "MSSQL$SQL2K14_MBS51P";
 
   @Override
   public boolean matches(final ConditionContext context, final AnnotatedTypeMetadata metadata) {
     try {
-      if(!SigarProvisioner.isNativeLoaded()) {
+      if (!SigarProvisioner.isNativeLoaded()) {
         SigarProvisioner.provision();
       }
       final String[] dbs = Pdh.getInstances(SQL_SERVER + ":Databases");

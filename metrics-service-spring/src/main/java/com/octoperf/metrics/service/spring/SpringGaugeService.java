@@ -20,6 +20,11 @@ final class SpringGaugeService implements GaugeService {
   }
 
   @Override
+  public Gauge substracting(final Gauge gauge) {
+    return new SubstractingGauge(gauge);
+  }
+
+  @Override
   public Gauge cached(final String name, final Gauge gauge) {
     return gauges.computeIfAbsent(name, key -> gauge);
   }

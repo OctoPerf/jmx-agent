@@ -5,6 +5,7 @@ import com.octoperf.metrics.service.api.Gauge;
 import com.octoperf.metrics.service.api.GaugeService;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import com.octoperf.metrics.windows.pdh.api.WindowsProcessMetrics;
+import com.octoperf.metrics.windows.pdh.api.WindowsSystemMetrics;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,20 +35,22 @@ public final class PdhProcessMetrics implements WindowsProcessMetrics {
   @NonNull
   @Getter
   String instance;
+  @NonNull
+  WindowsSystemMetrics system;
 
   @Override
   public double getPercentProcessorTime() {
-    return formatted("% Processor Time");
+    return formatted("% Processor Time") / system.getProcessorCount();
   }
 
   @Override
   public double getPercentUserTime() {
-    return formatted("% User Time");
+    return formatted("% User Time") / system.getProcessorCount();
   }
 
   @Override
   public double getPercentPrivilegedTime() {
-    return formatted("% Privileged Time");
+    return formatted("% Privileged Time") / system.getProcessorCount();
   }
 
   @Override

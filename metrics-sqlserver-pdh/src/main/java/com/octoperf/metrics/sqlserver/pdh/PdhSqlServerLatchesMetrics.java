@@ -29,7 +29,7 @@ public final class PdhSqlServerLatchesMetrics implements SqlServerLatchesMetrics
 
   @Override
   public double getAverageLatchWaitTimeMs() {
-    return latches("Average Latch Wait Time (ms)");
+    return substracting("Average Latch Wait Time (ms)");
   }
 
   @Override
@@ -60,6 +60,11 @@ public final class PdhSqlServerLatchesMetrics implements SqlServerLatchesMetrics
   private double perSecond(final String counter) {
     final Gauge gauge = () -> latches(counter);
     return gauges.cached(counter, gauges.perSecond(gauge)).getValue();
+  }
+
+  private double substracting(final String counter) {
+    final Gauge gauge = () -> latches(counter);
+    return gauges.cached(counter, gauges.substracting(gauge)).getValue();
   }
 
   private double latches(final String counter) {

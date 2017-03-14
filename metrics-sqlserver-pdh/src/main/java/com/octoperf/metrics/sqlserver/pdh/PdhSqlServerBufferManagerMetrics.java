@@ -1,5 +1,6 @@
 package com.octoperf.metrics.sqlserver.pdh;
 
+import com.google.common.collect.ImmutableSet;
 import com.octoperf.metrics.condition.IsWindows;
 import com.octoperf.metrics.mssql.api.SqlServerBufferManagerMetrics;
 import com.octoperf.metrics.service.api.Gauge;
@@ -12,6 +13,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+
 import static com.octoperf.metrics.sqlserver.pdh.IsSqlServer.SQL_SERVER;
 import static lombok.AccessLevel.PACKAGE;
 
@@ -21,6 +24,10 @@ import static lombok.AccessLevel.PACKAGE;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public final class PdhSqlServerBufferManagerMetrics implements SqlServerBufferManagerMetrics {
   private static final String BUFFER_MANAGER = SQL_SERVER + ":Buffer Manager";
+
+  private static final Set<String> FORMATTED_COUNTERS = ImmutableSet.of(
+    "Buffer Cache Hit Ratio"
+  );
 
   @NonNull
   PerfmonQueryService perfmon;
@@ -79,7 +86,7 @@ public final class PdhSqlServerBufferManagerMetrics implements SqlServerBufferMa
 
   @Override
   public double getBufferCacheHitRatio() {
-    return bufferManager("Buffer Cache Hit Ratio");
+    return formatted("Buffer Cache Hit Ratio");
   }
 
   private double perSecond(final String counter) {
@@ -89,5 +96,11 @@ public final class PdhSqlServerBufferManagerMetrics implements SqlServerBufferMa
 
   private double bufferManager(final String counter) {
     return perfmon.getRawValue(BUFFER_MANAGER, counter);
+  }
+
+  private double formatted(final String counter) {
+    return perfmon
+      .getFormattedValues(BUFFER_MANAGER, FORMATTED_COUNTERS)
+      .getOrDefault(counter, 0d);
   }
 }

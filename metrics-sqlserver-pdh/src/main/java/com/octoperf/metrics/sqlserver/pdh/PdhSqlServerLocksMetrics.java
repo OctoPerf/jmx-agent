@@ -32,7 +32,7 @@ public final class PdhSqlServerLocksMetrics implements SqlServerLocksMetrics {
 
   @Override
   public double getAverageWaitTimeMs() {
-    return locks("Average Wait Time (ms)");
+    return substracting("Average Wait Time (ms)");
   }
 
   @Override
@@ -47,7 +47,7 @@ public final class PdhSqlServerLocksMetrics implements SqlServerLocksMetrics {
 
   @Override
   public double getLockWaitTimeMs() {
-    return locks("Lock Wait Time (ms)");
+    return substracting("Lock Wait Time (ms)");
   }
 
   @Override
@@ -63,6 +63,11 @@ public final class PdhSqlServerLocksMetrics implements SqlServerLocksMetrics {
   private double perSecond(final String counter) {
     final Gauge gauge = () -> locks(counter);
     return gauges.cached(counter, gauges.perSecond(gauge)).getValue();
+  }
+
+  private double substracting(final String counter) {
+    final Gauge gauge = () -> locks(counter);
+    return gauges.cached(counter, gauges.substracting(gauge)).getValue();
   }
 
   private double locks(final String counter) {
