@@ -3,6 +3,7 @@ package com.octoperf.metrics.windows.pdh;
 import com.octoperf.metrics.service.api.GaugeService;
 import com.octoperf.metrics.windows.pdh.api.PerfmonQueryService;
 import com.octoperf.metrics.windows.pdh.api.WindowsProcessMetrics;
+import com.octoperf.metrics.windows.pdh.api.WindowsSystemMetrics;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.hyperic.sigar.win32.Pdh;
@@ -27,12 +28,13 @@ final class PdhProcesses {
   PdhProcesses(
     final PerfmonQueryService perfmon,
     final GaugeService gauges,
+    final WindowsSystemMetrics system,
     final AnnotationMBeanExporter exporter) throws Win32Exception, JMException {
     super();
 
-    for(final String instance : perfmon.getInstances(PROCESS)) {
+    for (final String instance : perfmon.getInstances(PROCESS)) {
       final ObjectName objectName = new ObjectName(format(OBJECT_NAME, PROCESS, quote(instance)));
-      final WindowsProcessMetrics metric = new PdhProcessMetrics(perfmon, gauges, instance);
+      final WindowsProcessMetrics metric = new PdhProcessMetrics(perfmon, gauges, instance, system);
       exporter.registerManagedResource(metric, objectName);
     }
   }
