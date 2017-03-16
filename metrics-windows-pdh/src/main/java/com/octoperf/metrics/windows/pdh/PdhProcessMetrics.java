@@ -40,17 +40,17 @@ public final class PdhProcessMetrics implements WindowsProcessMetrics {
 
   @Override
   public double getPercentProcessorTime() {
-    return formatted("% Processor Time") / system.getProcessorCount();
+    return perSecond("% Processor Time") / (100_000 * system.getProcessorCount());
   }
 
   @Override
   public double getPercentUserTime() {
-    return formatted("% User Time") / system.getProcessorCount();
+    return perSecond("% User Time") / (100_000 * system.getProcessorCount());
   }
 
   @Override
   public double getPercentPrivilegedTime() {
-    return formatted("% Privileged Time") / system.getProcessorCount();
+    return perSecond("% Privileged Time") / (100_000 * system.getProcessorCount());
   }
 
   @Override
