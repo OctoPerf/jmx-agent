@@ -24,7 +24,7 @@ To run the JMX Metrics Agent:
 
 - Download latest version from [Releases](https://github.com/OctoPerf/jmx-agent/releases),
 - Place it in a folder writeable by your user (Example: Documents on Windows),
-- Run via command line: *java - jar metrics-agent-X.x.x.jar*, Replace X.x.x by the version.
+- Run via command line: *java -jar -Djmx.rmi.host=HOSTNAME metrics-agent-X.x.x.jar*, Replace X.x.x by the version, and `HOSTNAME` by the hostname of your machine.
 
 The metrics agent takes a few seconds to start. It create a "native" folder in the location where its being run. The "native" folder contains DLLs and SOs to query operating system metrics.
 
