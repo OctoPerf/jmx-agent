@@ -1,5 +1,7 @@
 # JMX Metrics Agent
 
+**WARNING: Runs with Java 8 Only**
+
 The JMX Metrics Agent uses [Hyperic Sigar](https://github.com/hyperic/sigar) and PDH to exposes Operating System key performance metrics using JMX. Sigar is uses for Linux and PDH for Windows. The following metrics are available: (non-exhaustive)
 
 - CPU usage,
