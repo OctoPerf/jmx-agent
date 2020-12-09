@@ -18,7 +18,7 @@ Windows users can also monitor the following servers metrics:
 
 ## Requirements
 
-The JMX Agent is a java application which requires a Java Runtime Environment.
+The JMX Agent is a java application which requires **Java 8**. It doesn't work on newer versions of Java.
 
 ## Execute
 
