@@ -33,7 +33,7 @@ public final class PdhMemoryMetrics implements WindowsMemoryMetrics {
 
   @Override
   public double getAvailableMBytes() {
-    return raw("Available Mbytes");
+    return raw("Available MBytes");
   }
 
   @Override
