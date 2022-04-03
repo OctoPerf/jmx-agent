@@ -29,17 +29,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
-    <equalsverifier.version>3.7.1</equalsverifier.version>
-    <guava.version>30.1.1-jre</guava.version>
+    <equalsverifier.version>3.10</equalsverifier.version>
+    <guava.version>31.1-jre</guava.version>
     <javaslang.version>2.0.6</javaslang.version>
     <junit.version>4.13.1</junit.version>
-    <lombok.version>1.18.20</lombok.version>
-    <mockito.version>3.12.4</mockito.version>
+    <lombok.version>1.18.22</lombok.version>
+    <mockito.version>4.4.0</mockito.version>
     <sigar.loader.version>1.6.6-rev002</sigar.loader.version>
     <slf4j.version>1.7.30</slf4j.version>
     <spring.version>5.3.18</spring.version>
-    <spring.integration.version>5.5.3</spring.integration.version>
-    <spring.boot.version>2.5.4</spring.boot.version>
+    <spring.integration.version>5.5.10</spring.integration.version>
+    <spring.boot.version>2.6.6</spring.boot.version>
   </properties>
 
   <dependencyManagement>
